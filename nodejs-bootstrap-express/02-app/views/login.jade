@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        title=pageTitle
+        link(rel='stylesheet', href='/stylesheets/form.css')
+    body
+        img(src='/images/logo184x59.png', alt='logo')
+        h1=title
+        if isLoggedIn
+            h3 You are logged in.
+            form(name="logout", method="POST", action="logout")
+                div
+                    input(type='submit', value='Logout')
+                else
+                    form(name="logout", method="POST", action="logout")
+                        div
+                            label(for='email') Email
+                            input(name='email',type='email',placeholder='xxx@email.com')
+                        div
+                            label(for='password') Password
+                            input(name='password',type='password',placeholder='password')
+                        div
+                            input(type='submit', value='Login')

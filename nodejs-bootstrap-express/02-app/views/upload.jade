@@ -1,0 +1,28 @@
+//- <html>
+
+//- <body>
+//-     <form ref='uploadForm' id='uploadForm' action='http://localhost:3000/upload' method='post' encType="multipart/form-data">
+//-         <div>
+//-             <table>
+//-                 <tr>
+//-                     <td>
+//-                         <input type="file" name="sampleFile" />
+//-                 <tr>
+//-                     <td>
+//-                         <input type='submit' value='Upload' />
+
+html
+head
+title=title
+body
+h1=message
+
+script(type="text/javascript", src="/nodejs-upload-assets/upload-form.js")
+
+form(method="post", enctype="multipart\/form-data", action="/upload/")
+    input(type="hidden", name="sid", value=sessionId)
+
+    p Image:
+        input(type="file", name="image")
+    p
+        input(type="submit", value="upload")
